@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.sozix.superpom</groupId>
+	<artifactId>superpom</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>${project.artifactId}-${project.version}</name>
+
+	<modules>
+		<module>superpom-android</module>
+		<module>superpom-jdk</module>
+	</modules>
+
+	<scm>
+		<connection>scm:git:git:@github.com:lstrzelecki/superpom.git</connection>
+		<url>scm:git:git:@github.com:lstrzelecki/superpom.git</url>
+	</scm>
+
+	<distributionManagement>
+		<repository>
+			<id>sozix-repo</id>
+			<name>Maven repository</name>
+			<url>svn:https://mvn-repo.googlecode.com/svn/repository</url>
+		</repository>
+	</distributionManagement>
+
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.2.2</version>
+			</plugin>
+
+			<!-- Enable deploy on svn server -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>2.7</version>
+				<dependencies>
+					<dependency>
+						<groupId>com.google.code.maven-svn-wagon</groupId>
+						<artifactId>maven-svn-wagon</artifactId>
+						<version>1.4</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
