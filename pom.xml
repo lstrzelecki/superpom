@@ -29,6 +29,7 @@
 			<id>repo-snapshots</id>
 			<name>Snapshots maven repository</name>
 			<url>svn:https://repo-snapshots.googlecode.com/svn/repo</url>
+			<uniqueVersion>false</uniqueVersion>
 		</snapshotRepository>
 	</distributionManagement>
 
