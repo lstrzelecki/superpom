@@ -21,7 +21,7 @@
 
 	<distributionManagement>
 		<repository>
-			<id>repo-relases</id>
+			<id>repo-releases</id>
 			<name>Releases maven repository</name>
 			<url>svn:https://repo-releases.googlecode.com/svn/repo</url>
 		</repository>
