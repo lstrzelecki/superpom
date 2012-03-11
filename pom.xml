@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.sozix.superpom</groupId>
@@ -8,6 +9,10 @@
 	<packaging>pom</packaging>
 
 	<name>${project.artifactId}-${project.version}</name>
+
+	<properties>
+		<encoding.default>UTF-8</encoding.default>
+	</properties>
 
 	<modules>
 		<module>superpom-android</module>
@@ -73,7 +78,20 @@
 				<artifactId>maven-install-plugin</artifactId>
 				<version>2.3.1</version>
 			</plugin>
-
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<encoding>${encoding.default}</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.5</version>
+				<configuration>
+					<encoding>${encoding.default}</encoding>
+				</configuration>
+			</plugin>
 			<plugin>
 				<!--
 					Attach jar with sources while deploy. Deploy was failing without this jar (classifier src)
